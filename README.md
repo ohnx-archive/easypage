@@ -1,0 +1,3 @@
+easypage
+=============
+Make pages easy.

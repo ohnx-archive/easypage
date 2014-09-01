@@ -1,0 +1,39 @@
+<html><head>
+<title>Alpha Crypt--Strong Text Encryption</title>
+<script type="text/javascript" src="alphac.js"></script>
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript" src="timer.js"></script>
+<script type="text/javascript">
+function process(on) {
+var fe = document.fe;
+var ke = fe.key.value;
+var re = fe.re;
+var f = timer(function() {
+re.value = alphac(re.value, ke, md5(ke), on)
+});
+var t = f();
+var d = re.value.length;
+var r = Math.round(d / t * 1000);
+fe.time.value = r + 'B/s ' + t + 'ms ' + d + 'B';
+}
+</script>
+</head>
+<body onload="process(0)">
+<form action="?" name="fe"
+onsubmit="process(window.a=!window.a); return false">
+<div align="center">
+<textarea rows="12" cols="64" name="re">
+Type or paste here.
+</textarea>
+<p>
+Key: <input type="text" name="key" size="24" />
+Time: <input type="text" name="time" size="24" /><br />
+<input type="button" value="Encrypt"
+onclick="process(1)" />
+<input type="button" value="Decrypt"
+onclick="process(0)" />
+<input type="reset" value="Reset" />
+</p>
+</div>
+</form>
+</body></html>
