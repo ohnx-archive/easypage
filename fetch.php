@@ -10,6 +10,8 @@ $pwd = $_POST['pwd'];
 <link href='base.css' rel='stylesheet' type='text/css' />
 <?php
 if(isset($_POST['pwd'])&&($_POST['usepwd']=="yes")){
+//Begin portion crudely copied from alphacrypt website
+//I really need to learn JavaScript one day, it'll probably help with ajax
 ?>
 <script type="text/javascript" src="alphac/alphac.js"></script>
 <script type="text/javascript" src="alphac/md5.js"></script>
@@ -24,8 +26,6 @@ re.value = alphac(re.value, ke, md5(ke), on)
 });
 var t = f();
 var d = re.value.length;
-var r = Math.round(d / t * 1000);
-fe.time.value = r + 'B/s ' + t + 'ms ' + d + 'B';
 }
 </script>
 </head>
@@ -41,11 +41,6 @@ echo file_get_contents($path_to_text);
 </textarea>
 <p>
 Key: <input type="text" name="key" size="24" value="<?php echo $pwd;?>"/>
-<input type="button" value="Encrypt"
-onclick="process(1)" />
-<input type="button" value="Decrypt"
-onclick="process(0)" />
-<input type="reset" value="Reset" />
 </p>
 </div>
 </form>

@@ -24,7 +24,7 @@ text-decoration: line-through;
 a:hover{
 text-decoration: underline;
 }
-input{
+input, button{
 line-height: 20px;
 line-height: 1vw;
 text-align: left;
