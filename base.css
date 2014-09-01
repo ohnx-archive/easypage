@@ -1,6 +1,31 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400);
-html, body, p, div, h1, h2, h3, h4, h5, h6{
+html, body, p, div, h1, h2, h3, h4, h5, h6, table, input{
 font-family: 'Raleway', sans-serif;
 font-weight: 300;
 text-align: center;
+font-size:20px;
+font-size:1vw;
+}
+h1{
+font-size: 3.5vw;
+}
+h2{
+font-size: 2vw;
+}
+.focus{
+font-size: 1.7vw;
+}
+a{
+text-decoration: none;
+}
+a:visited{
+text-decoration: line-through;
+}
+a:hover{
+text-decoration: underline;
+}
+input{
+line-height: 20px;
+line-height: 1vw;
+text-align: left;
 }
