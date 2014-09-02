@@ -3,7 +3,7 @@ easypage
 Make webpages easy
 about
 ========
-What in the world does easypage do? Well, on the most basic level, it takes a file with bbcode, and displays it.
+What in the world does easypage do? Well, on the most basic level, it takes a file with text formatting(ohnxCode, or oC, for more information see guide.txt), and displays it.
 Simple. In fact, there are already tons of things that do this probably.
 However, this also offers encryption, and you can edit files.
 <ul>

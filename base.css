@@ -4,16 +4,16 @@ font-family: 'Raleway', sans-serif;
 font-weight: 400;
 text-align: center;
 font-size:20px;
-font-size:1vw;
+font-size:1.2vmax;
 }
 h1{
-font-size: 3.5vw;
+font-size: 2em;
 }
 h2{
-font-size: 2vw;
+font-size: 1.5em;
 }
 .focus{
-font-size: 1.7vw;
+font-size: 1.3em;
 }
 a{
 text-decoration: none;
@@ -26,8 +26,9 @@ text-decoration: underline;
 }
 input, button{
 line-height: 20px;
-line-height: 1vw;
+line-height: 1.3em;
 text-align: left;
+font-size: 1.3em;
 }
 b{
 font-weight:500;

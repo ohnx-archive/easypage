@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
-    header('WWW-Authenticate: Basic realm="Please login"');
+    header('WWW-Authenticate: Basic realm="Please login to access admin panel"');
     header('HTTP/1.0 401 Unauthorized');
 echo <<<FIN
 <html>
@@ -19,7 +19,7 @@ FIN;
 exit;
 } else {
 include("settings.php");
-if(true||($user==$_SERVER['PHP_AUTH_USER'])&&($passwd==$_SERVER['PHP_AUTH_PW'])){
+if(($user==$_SERVER['PHP_AUTH_USER'])&&($passwd==$_SERVER['PHP_AUTH_PW'])){
 } else {
 echo <<<FIN
 <html>
@@ -29,12 +29,17 @@ echo <<<FIN
 </head>
 <body>
 <div>
-Sorry, you're not allowed here.
+Sorry, the entered username(
+FIN;
+echo $_SERVER['PHP_AUTH_USER'].") and password(".$_SERVER['PHP_AUTH_PW'];
+echo <<<FN
+) did not match the ones in server records.
+You're not allowed here.
 Please go to <a href="./">here</a>
 </div>
 </body>
 </html>
-FIN;
+FN;
 exit;
 }
 }
@@ -115,8 +120,8 @@ echo "<br />The file and hash did not match. Please try again.";
 </textarea>
 <br />
 <input type="submit" value="Save"/>
-<button onclick="window.location.assign('<?php echo $_SERVER['PHP_SELF'];?>')">Go back</button>
 </form>
+<button onclick="window.location.assign('<?php echo $_SERVER['PHP_SELF'];?>')">Go back</button>
 <?php
 } else if($_POST['option']=="save"){
 if($_POST['new']=="true"){

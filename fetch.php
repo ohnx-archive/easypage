@@ -1,4 +1,55 @@
 <?php
+function parse($toParse){
+$toParse = nl2br($toParse);
+//images
+$toParse = str_replace("-img-","<img src='",$toParse);
+$toParse = str_replace("_img_","' />",$toParse);
+//bold
+$toParse = str_replace("-b-","<b>",$toParse);
+$toParse = str_replace("_b_","</b>",$toParse);
+//italics
+$toParse = str_replace("-i-","<i>",$toParse);
+$toParse = str_replace("_i_","' />",$toParse);
+//underline
+$toParse = str_replace("-u-","<u>",$toParse);
+$toParse = str_replace("_u_","</u>",$toParse);
+//strikethrough
+$toParse = str_replace("-s-","<span style='text-decoration:line-through'>",$toParse);
+$toParse = str_replace("_s_","</span>",$toParse);
+//pre
+$toParse = str_replace("-pre-","<pre>",$toParse);
+$toParse = str_replace("_pre_","</pre>",$toParse);
+//red
+$toParse = str_replace("-red-","<span style='color:#ED0000;'>",$toParse);
+$toParse = str_replace("_red_","</span>",$toParse);
+//blue
+$toParse = str_replace("-blue-","<span style='color:#00BFFF;'>",$toParse);
+$toParse = str_replace("_blue_","</span>",$toParse);
+//green
+$toParse = str_replace("-green-","<span style='color:#00ED00;'>",$toParse);
+$toParse = str_replace("_green_","</span>",$toParse);
+//pink
+$toParse = str_replace("-pink-","<span style='color:#FF8F8F;'>",$toParse);
+$toParse = str_replace("_pink_","</span>",$toParse);
+//custom style
+$toParse = str_replace("-style-","<div style='",$toParse);
+$toParse = str_replace("=style=","'>",$toParse);
+$toParse = str_replace("_style_","</div>",$toParse);
+//ul
+$toParse = str_replace("-ul-","<ul>",$toParse);
+$toParse = str_replace("_ul_","</ul>",$toParse);
+//ol
+$toParse = str_replace("-ol-","<ol>",$toParse);
+$toParse = str_replace("_ol_","</ol>",$toParse);
+//list
+$toParse = str_replace("--","<li>",$toParse);
+$toParse = str_replace("==","</li>",$toParse);
+//link
+$toParse = str_replace("-a-","<a href='",$toParse);
+$toParse = str_replace("=a=","'>",$toParse);
+$toParse = str_replace("_a_","</a>",$toParse);
+return $toParse;
+}
 if(isset($_REQUEST['id'])){
 $id = $_REQUEST['id'];
 $pwd = $_POST['pwd'];
@@ -36,7 +87,7 @@ onsubmit="process(window.a=!window.a); return false">
 <textarea rows="12" cols="64" name="re">
 <?php
 $path_to_text="files/".$id.".md";
-echo file_get_contents($path_to_text);
+echo parse(file_get_contents($path_to_text));
 ?>
 </textarea>
 <p>
@@ -54,7 +105,7 @@ Read another:
 <div>
 <?php
 $path_to_text="./files/".$id.".md";
-echo file_get_contents($path_to_text);
+echo parse(file_get_contents($path_to_text));
 if($_GET['hide']!="true"){
 ?>
 <hr />

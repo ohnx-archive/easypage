@@ -1,0 +1,40 @@
+oC guide:
+oC has 14 built-in codes:
+Images:		img (*)
+Bold:		b
+Italic:		i
+Underline:	u
+Strikethrough:	s
+Pre:		p
+Red:		red
+Blue:		blue
+Green:		green
+Pink:		pink
+custom styling:	style (*)
+unordered list:	ul (*)
+ordered list:	ol (*)
+list element:	(*)
+link:		a (*)
+(*)s indicate extra information needed.
+In general, use -<tag>- to start a tag and _<tag>_ to end it.
+Special exceptions/Notes:
+img:
+For this tag, do -img-<path to image>_img_
+style:
+This tag contains 3 parts:
+-style-<declare styles here>=style=<formatted text here>_style_
+ul:
+This tag needs to wrap around the list elements.
+use it as follows:
+-ul-<list elements>_ul_
+ol:
+This tag needs to wrap around the list elements.
+use it as follows:
+-ol-<list elements>_ol_
+list element:
+Use -- to start a list entry, and __ to end one. eg:
+--<entry>==
+Must be encapsulated by a ul or ol.
+a:
+use this tag in the method as follows:
+--a--<url here>==a==<text here>__a__
