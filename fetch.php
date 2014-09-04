@@ -9,7 +9,7 @@ $toParse = str_replace("-b-","<b>",$toParse);
 $toParse = str_replace("_b_","</b>",$toParse);
 //italics
 $toParse = str_replace("-i-","<i>",$toParse);
-$toParse = str_replace("_i_","' />",$toParse);
+$toParse = str_replace("_i_","</i>",$toParse);
 //underline
 $toParse = str_replace("-u-","<u>",$toParse);
 $toParse = str_replace("_u_","</u>",$toParse);
