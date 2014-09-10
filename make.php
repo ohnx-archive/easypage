@@ -74,7 +74,7 @@ foreach ($arr as $value) {
 </table>
 <h2>Create a new file</h2>
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="GET">
-Filename: <input name="file" type="text"/>.md
+Filename: <input name="file" type="text"/>.oc
 <input name="option" value="edit" type="hidden"/>
 <input name="new" value="true" type="hidden"/>
 <input type="submit" value="Submit"/>
@@ -125,7 +125,7 @@ echo "<br />The file and hash did not match. Please try again.";
 <?php
 } else if($_POST['option']=="save"){
 if($_POST['new']=="true"){
-$fname='./files/'.$_POST['file'].'.md';
+$fname='./files/'.$_POST['file'].'.oc';
 } else {
 $fname='./files/'.$_POST['file'];
 }
