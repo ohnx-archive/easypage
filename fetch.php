@@ -86,6 +86,10 @@ Please enter the ID of the document you would like to access, as well as the pas
 }
 if($_GET['hide']!="true"){
 ?>
+<!--<div id="wrapper">
+ 
+<div id="sidebar-wrapper">
+<ul class="sidebar-nav" style="text-align:center;">-->
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 ID: <input type="text" name="id"><br />
 Password: <input type="password" name="pwd"><br />
