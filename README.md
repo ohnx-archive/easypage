@@ -12,3 +12,6 @@ If you want me to make one, please create an issue, and I'll attend to it ASAP :
 Known setup requirements:
 If you are on linux, you must chmod the directory "files" to 755, or 777.
 (eg chmod 755 files/ )
+notice
+========
+this is old now. try using [mu](https://github.com/ohnx/mu) instead.
